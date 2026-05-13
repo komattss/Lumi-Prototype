@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 245, 245, 247;
+  --background-start-rgb: 5, 5, 8;
+  --background-end-rgb: 10, 10, 15;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-lumi-darker text-lumi-light antialiased;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
+
+/* Smooth scrolling container for better parallax control */
+.smooth-scroll {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Editorial typography rhythm */
+.editorial-text {
+  line-height: 1.8;
+  letter-spacing: -0.02em;
+}
+
+.display-text {
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+
+/* Cinematic spacing */
+.section-padding {
+  @apply py-24 md:py-32 lg:py-40;
+}
+
+.section-padding-lg {
+  @apply py-32 md:py-48 lg:py-64;
+}
